@@ -1,0 +1,5 @@
+source("https://bioconductor.org/biocLite.R")
+biocLite(c("Biobase","convert"))
+library("Biobase")
+library(convert)
+as(dat, "ExpressionSet")
