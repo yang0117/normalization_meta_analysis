@@ -4,12 +4,19 @@
 # load the example TGEN data
 #
 
-#load library
 # clear environment
 rm(list=ls())
-source("http://www.bioconductor.org/biocLite.R")
 
 #install and load package
+source("http://www.bioconductor.org/biocLite.R")
+
+biocLite("GEOquery")
+biocLite("mixOmics")
+#sudo apt-get install libglu1-mesa-dev
+#biocLite("rgl")
+install.packages("rgl")
+biocLite("mixOmics")
+
 if(!require(minfi)){
   biocLite("minfi")
 }
@@ -20,9 +27,12 @@ if(!require(stringr)){
 }
 
 
-#read path
+require(minfi)
+browseVignettes("minfi")
 
-path <- "./Rcode/SampleRawData/LOAD/IDAT/"
+
+#read path
+path <- "./SampleRawData/LOAD/IDAT/"
 file_name <- list.files(path)
 file_name
 class(file_name)
